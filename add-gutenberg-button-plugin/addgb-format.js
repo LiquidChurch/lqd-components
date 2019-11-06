@@ -1,4 +1,6 @@
+// TODO: Written in ES5 to avoid build process, change to ES6
 (function ( wp ) {
+    // Create our button.
     var lqdNotesButton = function( props ) {
         return wp.element.createElement(
             wp.blockEditor.RichTextToolbarButton, {
@@ -14,12 +16,14 @@
         );
     };
 
+    // What the button does
     wp.richText.registerFormatType(
         'lqdnotes/blankit', {
             title: 'Blank It',
-            tagName: 'span',
+            tagName: 'input',
             className: 'lqdnotes-blank-it',
+            id: lqdNotesButton,
             edit: lqdNotesButton,
         }
-        );
+    );
 } )( window.wp );
